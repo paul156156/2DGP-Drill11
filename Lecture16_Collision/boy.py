@@ -28,8 +28,6 @@ FRAMES_PER_ACTION = 8
 
 
 
-
-
 class Idle:
     @staticmethod
     def enter(boy, e):
@@ -168,4 +166,6 @@ class Boy:
     def handle_collision(self, group, other):
         if group == 'boy:ball':
             self.ball_count += 1
+        elif group == 'boy:zombie':
+            exit()
         pass

@@ -53,11 +53,13 @@ class Zombie:
         else:
             Zombie.images['Walk'][int(self.frame)].draw(self.x, self.y, 200, 200)
 
+        draw_rectangle(*self.get_bb())
+
     def handle_event(self, event):
         pass
 
     def get_bb(self):
-        return self.x - 20, self.y - 40, self.x + 20, self.y + 40
+        return self.x - 60, self.y - 100, self.x + 60, self.y + 80
         pass
 
     def handle_collision(self, group, other):
@@ -65,6 +67,7 @@ class Zombie:
             self.lives -= 1
             if self.lives == 0:
                 game_world.remove_object(self)
-            pass
+
+        pass
 
 
